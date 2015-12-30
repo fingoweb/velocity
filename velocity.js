@@ -1475,12 +1475,7 @@ return function (global, window, document, undefined) {
 
             /* For SVG elements, some properties (namely, dimensional ones) are GET/SET via the element's HTML attributes (instead of via CSS styles). */
             SVGAttribute: function (property) {
-                var SVGAttributes = "width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2";
-
-                /* Certain browsers require an SVG transform to be applied as an attribute. (Otherwise, application via CSS is preferable due to 3D support.) */
-                if (IE || (Velocity.State.isAndroid && !Velocity.State.isChrome)) {
-                    SVGAttributes += "|transform";
-                }
+                var SVGAttributes = "width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2|transform";
 
                 return new RegExp("^(" + SVGAttributes + ")$", "i").test(property);
             },
