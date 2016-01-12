@@ -441,6 +441,9 @@ return function (global, window, document, undefined) {
 
     /* IE detection. Gist: https://gist.github.com/julianshapiro/9098609 */
     var IE = (function() {
+
+        return 'edge';
+
         if (document.documentMode) {
             return document.documentMode;
         } else {
